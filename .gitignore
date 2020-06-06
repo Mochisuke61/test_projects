@@ -13,3 +13,5 @@ Release/
 *.db
 *.suo
 *.pch
+*.vcxproj
+*.filters
