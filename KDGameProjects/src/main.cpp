@@ -1,6 +1,17 @@
 #include<iostream>
 
-int main(void)
-{
-	printf("Hello World");
+void test(void) {
+
+	static int count = 0;
+	printf("Hello World\n");
+	if (++count > 2020)	return;
+	test();
 }
+
+int main(void) {
+
+
+	test();
+	return 0;
+}
+
