@@ -1,0 +1,8 @@
+■命名規則
+
+　・ファイル   - スネークケース ( 例 : test_name_case) 
+　・フォルダ名 - スネークケース ( 例 : test_name_case) )
+　・関数名     - アッパーキャメルケース ( 例 : TestNameCase() )
+　・変数名     - ロワーキャメルケース   ( 例 : int testNameCase )
+  ・クラス名   - アッパーキャメルケース ( 例 : class TestNameCase{}; )
+　・メンバ変数 - ロワー + 先頭にアンダーバー ( 例 : int _testNameCase )
