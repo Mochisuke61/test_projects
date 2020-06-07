@@ -4,15 +4,51 @@
     <Filter Include="src">
       <UniqueIdentifier>{37f2958e-3f50-4977-b93d-053618365e13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{77f98c84-0bc6-4f5b-af28-3f6183c58844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\MyLibrary">
+      <UniqueIdentifier>{0b85856f-395e-4999-8610-2ca04cf7d5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\MyLibrary\Graphics">
+      <UniqueIdentifier>{6eeebea3-5ed5-477e-a245-ea02c5a067d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\System">
+      <UniqueIdentifier>{c578d473-9cd1-41c0-89fc-254f512f5ae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{b398b95c-dfca-4761-958f-c5f408bd2fdf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="lib\MyLibrary\Graphics\Direct3DManager.cpp">
+      <Filter>lib\MyLibrary\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sytem\GameWindow.cpp">
+      <Filter>src\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sytem\GameManager.cpp">
+      <Filter>src\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\MyLibrary\Graphics\Direct3DManager.h">
+      <Filter>lib\MyLibrary\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sytem\GameWindow.h">
+      <Filter>src\System</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\MyLibrary.h">
+      <Filter>lib\MyLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sytem\GameManager.h">
+      <Filter>src\System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

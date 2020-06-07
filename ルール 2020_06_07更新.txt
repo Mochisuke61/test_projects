@@ -1,7 +1,7 @@
 ■命名規則
 
-　・ファイル   - スネークケース ( 例 : test_name_case) 
-　・フォルダ名 - スネークケース ( 例 : test_name_case) )
+　・ファイル   - アッパーキャメルケース ( 例 : TestNameCase.cpp ) 
+　・フォルダ名 - アッパーキャメルケース ( 例 : TestNameCase) )
 　・関数名     - アッパーキャメルケース ( 例 : TestNameCase() )
 　・変数名     - ロワーキャメルケース   ( 例 : int testNameCase )
   ・クラス名   - アッパーキャメルケース ( 例 : class TestNameCase{}; )
