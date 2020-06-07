@@ -52,7 +52,7 @@ bool GameWindow::Create(HINSTANCE hInstance, int clientWidth, int clientHeight, 
 	UpdateWindow(_hWnd);
 
 	//timeGetTimeŠÖ”‚Ì§“x‚ğ1ms‚Éİ’è
-	//timeBeginPeriod(1);
+	timeBeginPeriod(1);
 
 	return true;
 }
