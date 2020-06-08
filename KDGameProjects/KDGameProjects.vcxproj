@@ -88,9 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>lib;src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;lib;src</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>Pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -149,6 +152,9 @@
     <ClCompile Include="lib\MyLibrary\Math\Math.cpp" />
     <ClCompile Include="lib\MyLibrary\Utility\Helper.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\Sytem\GameManager.cpp" />
     <ClCompile Include="src\Sytem\GameWindow.cpp" />
     <ClCompile Include="src\Sytem\Object.cpp" />
@@ -160,6 +166,7 @@
     <ClInclude Include="lib\MyLibrary\Math\Math.h" />
     <ClInclude Include="lib\MyLibrary\Utility\Helper.h" />
     <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\Pch.h" />
     <ClInclude Include="src\Sytem\GameManager.h" />
     <ClInclude Include="src\Sytem\GameWindow.h" />
     <ClInclude Include="src\Sytem\Object.h" />

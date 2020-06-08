@@ -51,6 +51,9 @@
     <ClCompile Include="lib\MyLibrary\Graphics\Polygon.cpp">
       <Filter>lib\MyLibrary\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="src\Pch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="lib\MyLibrary\Graphics\Polygon.h">
       <Filter>lib\MyLibrary\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pch.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
