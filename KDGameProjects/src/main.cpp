@@ -50,7 +50,13 @@ bool Application::Init(HINSTANCE hInstance, int w, int h)
 		bFullScreen = true;
 	}*/
 
+	//背景色の設定
+	D3DManager.SetBackGroudColor(1.0f, 0.0f, 0.0f, 1.0f);
+
 	//Directx初期化
+	D3DManager.Init(_gameWindow.GetHWnd());
+
+
 	//いろいろ初期化する必要がある
 
 	return true;
@@ -58,6 +64,7 @@ bool Application::Init(HINSTANCE hInstance, int w, int h)
 
 void Application::Release()
 {
+	D3DManager.Release();
 	_gameWindow.Release();
 }
 
@@ -83,6 +90,9 @@ void Application::Loop()
 		if (_gameWindow.IsCreated() == false) break;
 
 		//サウンド関係
+
+		//DirectX描画
+		D3DManager.Render();
 
 		//ゲーム処理
 		GAME_MGR.Run();

@@ -1,5 +1,6 @@
 #include "main.h"
 #include "GameManager.h"
+#include "Object.h"
 
 void GameManager::Init()
 {
@@ -13,4 +14,9 @@ void GameManager::Run()
 	{
 		APP.EndGame();
 	}
+}
+
+void GameManager::Release()
+{
+
 }

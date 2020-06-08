@@ -90,6 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>lib;src</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,16 +145,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lib\MyLibrary\Graphics\Direct3DManager.cpp" />
+    <ClCompile Include="lib\MyLibrary\Graphics\Polygon.cpp" />
+    <ClCompile Include="lib\MyLibrary\Math\Math.cpp" />
+    <ClCompile Include="lib\MyLibrary\Utility\Helper.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Sytem\GameManager.cpp" />
     <ClCompile Include="src\Sytem\GameWindow.cpp" />
+    <ClCompile Include="src\Sytem\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\MyLibrary.h" />
     <ClInclude Include="lib\MyLibrary\Graphics\Direct3DManager.h" />
+    <ClInclude Include="lib\MyLibrary\Graphics\Polygon.h" />
+    <ClInclude Include="lib\MyLibrary\Math\Math.h" />
+    <ClInclude Include="lib\MyLibrary\Utility\Helper.h" />
     <ClInclude Include="src\main.h" />
     <ClInclude Include="src\Sytem\GameManager.h" />
     <ClInclude Include="src\Sytem\GameWindow.h" />
+    <ClInclude Include="src\Sytem\Object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

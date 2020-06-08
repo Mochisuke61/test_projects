@@ -10,6 +10,9 @@ public:
 	//ƒQ[ƒ€ˆ—
 	void Run();
 
+	//‰ğ•ú
+	void Release();
+
 private:
 	GameManager(){}
 public:
