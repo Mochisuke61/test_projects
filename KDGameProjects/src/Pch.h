@@ -1,2 +1,0 @@
-//MyLibrary
-#include "MyLibrary.h"

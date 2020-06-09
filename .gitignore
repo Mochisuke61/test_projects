@@ -13,3 +13,5 @@ Release/
 *.db
 *.suo
 *.pch
+*_PS.inc
+*_VS.inc
