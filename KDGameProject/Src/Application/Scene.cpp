@@ -1,10 +1,13 @@
 #include "main.h"
 #include "Scene.h"
+#include "Objects/Character/Character.h"
 
 void Scene::Init()
 {
-	//FIXME:
-	//
+	//FIXME: ここはJsonからうまく取得できるように変更しておきたい
+	//オブジェクトを追加する処理
+	std::shared_ptr<Character> dragon = std::make_shared<Character>();
+	_objetList.push_back(dragon);
 
 	//全オブジェクトの更新処理
 	for (auto object : _objetList)
@@ -51,15 +54,22 @@ void Scene::Release()
 
 void Scene::ImGuiUpdate()
 {
-	return;
-
 	ImGui::SetNextWindowPos(ImVec2(20, 20), ImGuiSetCond_Once);
 	ImGui::SetNextWindowSize(ImVec2(200, 100), ImGuiSetCond_Once);
 
 	// デバッグウィンドウ
-	if (ImGui::Begin("Debug Window"))
+	ImGui::Begin("Debug Window");
+	ImGui::Text("FPS : %d", APP.m_fps);
+
+	//デバッグ表示
+	for (const auto& [key,value] : _debugLogList)
 	{
-		ImGui::Text("FPS : %d", APP.m_fps);
+		ImGui::Text("%s : %f",key.c_str(),value);
 	}
 	ImGui::End();
+}
+
+void Scene::AddDebugLog(std::string key, float value)
+{
+	_debugLogList.insert(std::make_pair(key,value));
 }

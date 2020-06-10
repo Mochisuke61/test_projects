@@ -24,15 +24,19 @@ public:
 	// GUI処理
 	void ImGuiUpdate();
 
+	//ImGuiで表示するデバッグデータを追加する
+	void AddDebugLog(std::string key, float value);
+
+private:
+
 private:
 	//メンバ
 	//全オブジェクトリスト
 	std::list<std::shared_ptr<ObjectBase>> _objetList;
 
-	void AddObject(std::shared_ptr<ObjectBase> obj)
-	{
-		_objetList.push_back(obj);
-	}
+	//ImGui関係
+	//FIXME: floatしか使えんカスデータなのでテンプレートでうまいことできるように修正必要
+	std::map<std::string, float> _debugLogList {};
 
 private:
 	Scene() {}

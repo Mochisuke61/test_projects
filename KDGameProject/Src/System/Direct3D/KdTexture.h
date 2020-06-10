@@ -95,6 +95,12 @@ public:
 	// ・stencil	… クリアするステンシルバッファの値
 	void ClearDepth(bool bDepth = true, bool bStencil = true, FLOAT depth = 1.0f, UINT8 stencil = 0);
 
+	//画像の四角形を取得
+	DirectX::SimpleMath::Rectangle GetRect()
+	{
+		return { 0,0,(long) GetInfo().Width,(long) GetInfo().Height};
+	}
+
 	// 
 	KdTexture() {}
 
@@ -146,6 +152,9 @@ private:
 
 	// 画像ファイル名
 	std::string					m_filepath;
+
+	//テクスチャが保存されているファイルパス
+	const std::string _fileDirectory = "Data/Texture/";
 
 private:
 	// コピー禁止用

@@ -5,9 +5,10 @@
 //========================
 class ObjectBase
 {
-private:
+protected:
 
-	int objeect;
+	KdMatrix _matrix;
+	bool isActive = true;
 
 public:
 	virtual ~ObjectBase() {}
@@ -22,6 +23,8 @@ public:
 	virtual void Draw2D() {}
 	//‰ğ•ú
 	virtual void Release() {}
+	//•\¦E”ñ•\¦‚ğØ‚è‘Ö‚¦
+	virtual void SetActive(bool flg) { isActive = flg; }
 
 	virtual bool HitTest_Circle(const Math::Vector2& pos, float radius, Math::Vector2* hitPos)
 	{

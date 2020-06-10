@@ -2,6 +2,7 @@
 
 #include "SpriteFont.h"
 
+#include "System/Math/KdMath.h"
 //===================================================
 //
 // 2D描画シェーダ
@@ -83,6 +84,26 @@ public:
 	{
 		if (tex == nullptr)return;
 		DrawTex(tex, 0, 0, srcRect.width, srcRect.height, &srcRect, &Math::Color(1, 1, 1, alpha), pivot);
+	}
+
+	//描画関係をラップ
+	void DrawTex(const KdTexture* tex,const KdMatrix& matrix)
+	{
+		if (tex == nullptr) return;
+
+		//行列をセット
+		SetMatrix(matrix);
+
+		//描画
+		DrawTex(
+			tex,
+			0,
+			0,
+			tex->GetInfo().Width,
+			tex->GetInfo().Height,
+			nullptr,
+			&Math::Color(1,1,1,1),
+			Math::Vector2(0.5f, 0.5f));
 	}
 
 	//４・５月の授業用文字表示

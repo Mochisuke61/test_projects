@@ -49,6 +49,9 @@
     <Filter Include="Src\System\Math">
       <UniqueIdentifier>{ef8a1080-bb4f-4eca-b41b-6c010ef25aa7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Objects\Character">
+      <UniqueIdentifier>{fef4f45d-00f2-4cf1-ba26-95dddedcb757}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -153,6 +156,9 @@
     <ClInclude Include="Src\Application\Objects\Object.h">
       <Filter>Src\Application\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\Objects\Character\Character.h">
+      <Filter>Src\Application\Objects\Character</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -223,6 +229,9 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Objects\Object.cpp">
       <Filter>Src\Application\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Objects\Character\Character.cpp">
+      <Filter>Src\Application\Objects\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

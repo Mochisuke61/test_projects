@@ -6,10 +6,11 @@
 bool KdTexture::Load(const std::string & filename, bool renderTarget, bool depthStencil, bool generateMipmap)
 {
 	Release();
-	if (filename.empty())return false;
+	std::string fileFullPath = _fileDirectory + filename;
+	if (fileFullPath.empty())return false;
 
 	// ƒtƒ@ƒCƒ‹–¼‚ðWideChar‚Ö•ÏŠ·
-	std::wstring wFilename = sjis_to_wide(filename);
+	std::wstring wFilename = sjis_to_wide(fileFullPath);
 
 	// Bind Flags
 	UINT bindFlags = 0;
@@ -104,7 +105,7 @@ bool KdTexture::Load(const std::string & filename, bool renderTarget, bool depth
 		return false;
 	}
 
-	m_filepath = filename;
+	m_filepath = fileFullPath;
 
 	return true;
 }
