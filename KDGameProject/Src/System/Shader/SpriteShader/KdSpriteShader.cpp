@@ -70,6 +70,12 @@ bool KdSpriteShader::Init()
 
 	m_rs = KdCreateRasterizerState(D3D.GetDev(), D3D11_CULL_NONE, D3D11_FILL_SOLID, true, false);
 
+	//-------------------------------------
+	// •¶Žš•\Ž¦ŠÖŒW
+	//-------------------------------------
+	spriteBatch = new DirectX::SpriteBatch(D3D.GetDevContext());
+	spriteFont = new DirectX::SpriteFont(D3D.GetDev(), L"SpriteFont.dat");
+
 	return true;
 }
 
@@ -88,6 +94,9 @@ void KdSpriteShader::Release()
 	KdSafeRelease(m_saveState.DS);
 	KdSafeRelease(m_saveState.RS);
 	KdSafeRelease(m_saveState.Smp0);
+
+	KdSafeDelete(spriteBatch);
+	KdSafeDelete(spriteFont);
 
 }
 
