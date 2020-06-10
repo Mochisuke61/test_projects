@@ -25,11 +25,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpszArgs, int
 	return 0;
 }
 
-
 // アプリケーション初期設定
 bool Application::Init(int w, int h)
 {
-
 	//===================================================================
 	// ウィンドウ作成
 	//===================================================================
@@ -46,16 +44,15 @@ bool Application::Init(int w, int h)
 	//	bFullScreen = true;
 	//}
 
-
 	//===================================================================
 	// Direct3D
 	//===================================================================
 
 	// デバイスのデバッグモードを有効にする
 	bool deviceDebugMode = false;
-	#ifdef _DEBUG
+#ifdef _DEBUG
 	deviceDebugMode = true;
-	#endif
+#endif
 
 	// Direct3D初期化
 	std::string errorMsg;
@@ -96,7 +93,7 @@ bool Application::Init(int w, int h)
 
 	{
 		// 日本語対応
-		#include "imgui/ja_glyph_ranges.h"
+#include "imgui/ja_glyph_ranges.h"
 		ImFontConfig config;
 		config.MergeMode = true;
 		io.Fonts->AddFontDefault();
@@ -125,7 +122,6 @@ void Application::Release()
 
 	// ウィンドウ削除
 	m_window.Release();
-
 }
 
 // アプリケーション実行
@@ -137,7 +133,6 @@ void Application::Execute()
 	if (APP.Init(1280, 720) == false) {
 		return;
 	}
-
 
 	//===================================================================
 	// ゲームループ
@@ -153,13 +148,12 @@ void Application::Execute()
 	// ループ
 	while (1)
 	{
-
 		// 処理開始時間Get
 		DWORD st = timeGetTime();
 
 		// ゲーム終了指定があるときはループ終了
 		if (m_endFlag)
-		{ 
+		{
 			break;
 		}
 
@@ -199,11 +193,13 @@ void Application::Execute()
 		// ゲーム更新処理
 		SCENE.Update();
 
+		//3D描画処理
+		SCENE.Draw3D();
+
 		// ゲーム描画処理
 		SHADER.m_spriteShader.Begin();
 		SCENE.Draw2D();
 		SHADER.m_spriteShader.End();
-
 
 		//リリース時はImGuiの部分は通らないようにする
 		// ImGui開始
@@ -217,10 +213,8 @@ void Application::Execute()
 		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 		//---------------------
 
-
 		// BackBuffer -> FrontBuffer
 		D3D.GetSwapChain()->Present(0, 0);
-
 
 		//=========================================
 		//
@@ -244,12 +238,10 @@ void Application::Execute()
 			baseTime = st;
 			count = 0;
 		}
-
 	}
 
 	// ゲーム解放
 	SCENE.Release();
-
 
 	//===================================================================
 	// アプリケーション解放

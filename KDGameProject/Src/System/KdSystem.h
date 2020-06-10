@@ -29,3 +29,7 @@
 
 // オーディオ
 #include "Audio/KdAudio.h"
+
+//数学
+#include "Math/KdMath.h"
+

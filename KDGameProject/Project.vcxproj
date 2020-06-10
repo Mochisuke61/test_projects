@@ -60,7 +60,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\;src;..\Library;..\Library\DirectXTK\Inc;..\Library\DirectXTex\DirectXTex;..\Library\tinygltf;..\Library\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;Src/Application;Src;..\Library;..\Library\DirectXTK\Inc;..\Library\DirectXTex\DirectXTex;..\Library\tinygltf;..\Library\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -71,6 +71,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ForcedIncludeFiles>Pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalOptions>/nodefaultlib:"LIBCMT"
@@ -159,6 +160,7 @@
     <ClInclude Include="..\Library\tinygltf\stb_image.h" />
     <ClInclude Include="..\Library\tinygltf\stb_image_write.h" />
     <ClInclude Include="..\Library\tinygltf\tiny_gltf.h" />
+    <ClInclude Include="Src\Application\Objects\Object.h" />
     <ClInclude Include="Src\Application\Scene.h" />
     <ClInclude Include="Src\Application\main.h" />
     <ClInclude Include="Src\Application\TestCamera.h" />
@@ -170,6 +172,7 @@
     <ClInclude Include="src\System\Direct3D\KdModel.h" />
     <ClInclude Include="src\System\Direct3D\KdTexture.h" />
     <ClInclude Include="src\Pch.h" />
+    <ClInclude Include="Src\System\Math\KdMath.h" />
     <ClInclude Include="Src\System\Shader\EffectShader\KdEffectShader.h" />
     <ClInclude Include="Src\System\Shader\KdShaderManager.h" />
     <ClInclude Include="Src\System\Shader\SpriteShader\KdSpriteShader.h" />
@@ -185,6 +188,7 @@
     <ClCompile Include="..\Library\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Src\Application\Objects\Object.cpp" />
     <ClCompile Include="Src\Application\Scene.cpp" />
     <ClCompile Include="Src\Application\main.cpp" />
     <ClCompile Include="Src\Application\TestCamera.cpp" />
@@ -206,9 +210,7 @@
     <ClCompile Include="src\System\Window\KdGameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="説明.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Src\System\Math\KdMath.inl" />
     <None Include="Src\System\Shader\EffectShader\inc_KdEffectShader.hlsli" />
     <None Include="Src\System\Shader\inc_KdCommon.hlsli" />
     <None Include="Src\System\Shader\SpriteShader\inc_KdSpriteShader.hlsli" />

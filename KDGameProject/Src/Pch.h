@@ -48,6 +48,7 @@
 #include <mutex>
 #include <future>
 #include <filesystem>
+#include <algorithm>
 
 //===============================================
 //

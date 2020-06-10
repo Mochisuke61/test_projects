@@ -43,6 +43,12 @@
     <Filter Include="Src\System\Audio">
       <UniqueIdentifier>{667d1cb1-5ae5-476f-acd5-14b7d294a95a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Objects">
+      <UniqueIdentifier>{45c38a07-7f2f-449f-bb79-cac682ddc182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\System\Math">
+      <UniqueIdentifier>{ef8a1080-bb4f-4eca-b41b-6c010ef25aa7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -141,6 +147,12 @@
     <ClInclude Include="Src\Application\Scene.h">
       <Filter>Src\Application</Filter>
     </ClInclude>
+    <ClInclude Include="Src\System\Math\KdMath.h">
+      <Filter>Src\System\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Objects\Object.h">
+      <Filter>Src\Application\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -209,9 +221,9 @@
     <ClCompile Include="Src\Application\Scene.cpp">
       <Filter>Src\Application</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="説明.txt" />
+    <ClCompile Include="Src\Application\Objects\Object.cpp">
+      <Filter>Src\Application\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\System\Shader\EffectShader\inc_KdEffectShader.hlsli">
@@ -225,6 +237,9 @@
     </None>
     <None Include="Src\System\Shader\StandardShader\inc_KdStandardShader.hlsli">
       <Filter>Src\System\Shader\StandardShader</Filter>
+    </None>
+    <None Include="Src\System\Math\KdMath.inl">
+      <Filter>Src\System\Math</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
