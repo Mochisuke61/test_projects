@@ -5,11 +5,6 @@
 //========================
 class ObjectBase
 {
-protected:
-
-	KdMatrix _matrix;
-	bool isActive = true;
-
 public:
 	virtual ~ObjectBase() {}
 
@@ -17,6 +12,8 @@ public:
 	virtual void Init() {}
 	//更新処理
 	virtual void Update() {}
+	//更新後処理
+	virtual void LateUpdate() {}
 	//3D描画
 	virtual void Draw3D() {}
 	//2D描画
@@ -33,4 +30,18 @@ public:
 
 	//デバッグ描画
 	virtual void DebugDraw() {}
+
+protected:
+
+	//合成後の行列
+	KdMatrix _matrix;
+	//移動行列
+	KdMatrix _transMatrix;
+	//回転行列
+	KdMatrix _rotMatrix;
+	//拡大行列
+	KdMatrix _scaleMatrix;
+
+	//このオブジェクトの表示・非表示
+	bool isActive = true;
 };

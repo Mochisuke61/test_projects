@@ -161,6 +161,7 @@
     <ClInclude Include="..\Library\tinygltf\stb_image_write.h" />
     <ClInclude Include="..\Library\tinygltf\tiny_gltf.h" />
     <ClInclude Include="Src\Application\Objects\Character\Character.h" />
+    <ClInclude Include="Src\Application\Objects\Character\Dragon.h" />
     <ClInclude Include="Src\Application\Objects\Object.h" />
     <ClInclude Include="Src\Application\Scene.h" />
     <ClInclude Include="Src\Application\main.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Src\System\Shader\SpriteShader\KdSpriteShader.h" />
     <ClInclude Include="Src\System\Shader\StandardShader\KdStandardShader.h" />
     <ClInclude Include="src\System\KdSystem.h" />
+    <ClInclude Include="Src\System\Utility\Input\KdInput.h" />
     <ClInclude Include="src\System\Utility\KdUtility.h" />
     <ClInclude Include="src\System\Window\KdGameWindow.h" />
   </ItemGroup>
@@ -190,6 +192,7 @@
     <ClCompile Include="..\Library\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Src\Application\Objects\Character\Character.cpp" />
+    <ClCompile Include="Src\Application\Objects\Character\Dragon.cpp" />
     <ClCompile Include="Src\Application\Objects\Object.cpp" />
     <ClCompile Include="Src\Application\Scene.cpp" />
     <ClCompile Include="Src\Application\main.cpp" />
@@ -209,6 +212,7 @@
     <ClCompile Include="Src\System\Shader\KdShaderManager.cpp" />
     <ClCompile Include="Src\System\Shader\SpriteShader\KdSpriteShader.cpp" />
     <ClCompile Include="Src\System\Shader\StandardShader\KdStandardShader.cpp" />
+    <ClCompile Include="Src\System\Utility\Input\KdInput.cpp" />
     <ClCompile Include="src\System\Window\KdGameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

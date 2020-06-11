@@ -28,8 +28,6 @@ public:
 	void AddDebugLog(std::string key, float value);
 
 private:
-
-private:
 	//メンバ
 	//全オブジェクトリスト
 	std::list<std::shared_ptr<ObjectBase>> _objetList;

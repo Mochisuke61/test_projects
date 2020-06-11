@@ -938,6 +938,20 @@ public:
 		return *this;
 	}
 
+	//2DˆÚ“®
+	KdMatrix& Move(float x, float y)
+	{
+		_41 += x;
+		_42 += y;
+		return *this;
+	}
+	KdMatrix& Move(const KdVec2& v)
+	{
+		_41 += v.x;
+		_42 += v.y;
+		return *this;
+	}
+
 	// X‰ñ“]
 	KdMatrix& RotateX(float angle)
 	{

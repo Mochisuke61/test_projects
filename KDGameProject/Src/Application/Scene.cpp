@@ -1,12 +1,12 @@
 #include "main.h"
 #include "Scene.h"
-#include "Objects/Character/Character.h"
+#include "Objects/Character/Dragon.h"
 
 void Scene::Init()
 {
 	//FIXME: ここはJsonからうまく取得できるように変更しておきたい
 	//オブジェクトを追加する処理
-	std::shared_ptr<Character> dragon = std::make_shared<Character>();
+	std::shared_ptr<Dragon> dragon = std::make_shared<Dragon>();
 	_objetList.push_back(dragon);
 
 	//全オブジェクトの更新処理
@@ -22,6 +22,12 @@ void Scene::Update()
 	for (auto object : _objetList)
 	{
 		object->Update();
+	}
+
+	//全オブジェクトの更新後処理
+	for (auto object : _objetList)
+	{
+		object->LateUpdate();
 	}
 }
 

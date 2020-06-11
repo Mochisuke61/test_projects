@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Objects/Object.h"
+
 //=================================================
 // キャラクターオブジェクト
 // ・キャラクターを作成するときの基底オブジェクト
@@ -16,6 +18,10 @@ public:
 	//解放
 	virtual void Release();
 
-private:
+protected:
+	//キャラクターの画像
 	KdTexture _texture;
+
+	//キャラクターの移動速度
+	float _moveSpeed = 5.0f;
 };
