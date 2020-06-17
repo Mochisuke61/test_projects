@@ -27,7 +27,7 @@ public:
 	// 解放
 	void Release();
 
-	// 
+	//
 	~KdSpriteShader() {
 		Release();
 	}
@@ -45,7 +45,7 @@ public:
 	void Begin(bool linear = false, bool disableZBuffer = true);
 
 	// 描画終了
-	//  Begin()で記憶していたステートを復元 
+	//  Begin()で記憶していたステートを復元
 	void End();
 
 	// 変換行列セット
@@ -110,15 +110,26 @@ public:
 	void DrawString(float _x, float _y, const char _text[], const Math::Vector4& _color)
 	{
 		//ワイド文字列に変換する必要がある
-		WCHAR *_wtext = new WCHAR[strlen(_text) + 1];
+		WCHAR* _wtext = new WCHAR[strlen(_text) + 1];
 		mbstowcs_s(nullptr, _wtext, strlen(_text) + 1, _text, _TRUNCATE);
 
-		spriteBatch->Begin();
+		//Begin前のBlendStateを取得
+		ID3D11BlendState* oldBlendState = 0;
+		float oldFactor[4];
+		UINT oldMask = 0;
+		D3D.GetDevContext()->OMGetBlendState(&oldBlendState, oldFactor, &oldMask);
+
+		//BlendStateを引き継いでBegin
+		spriteBatch->Begin(DirectX::SpriteSortMode_Deferred, oldBlendState);
 		spriteFont->DrawString(spriteBatch, _wtext, Math::Vector2(_x + 640, -_y + 360), _color);
 		spriteBatch->End();
 
+		//Begin前のBlendStateを復元
+		D3D.GetDevContext()->OMSetBlendState(oldBlendState, oldFactor, oldMask);
+
 		delete[] _wtext;
 	}
+
 
 
 	// 点を描画
